@@ -11,19 +11,20 @@ After setup, access the Netdata dashboard at:
 
 ### 1. Start Netdata Container
 
-sh
+```sh
 docker run -d --name=netdata \
   -p 19999:19999 \
   --cap-add=sys_ptrace \
   --security-opt apparmor=unconfined \
   netdata/netdata
+```
 
 
 ### 2. Verify Container is Running
 
-sh
+```sh
 docker ps
-
+```
 
 ### 3. Access the Dashboard
 
@@ -32,16 +33,16 @@ Open your browser and go to:
 
 ### 4. List Netdata Logs Inside the Container
 
-sh
+```sh
 docker exec -it netdata ls /var/log/netdata
-
+```
 
 ### 5. Stop and Remove the Container
 
-sh
+```sh
 docker stop netdata
 docker rm netdata
-
+```
 
 ## Deliverables
 
