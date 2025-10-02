@@ -1,32 +1,49 @@
+#  Netdata Monitoring with Docker
 
-Netdata Monitoring Task
-Objective
+This repository demonstrates how to set up real-time system and application monitoring using *Netdata* inside a Docker container.
 
-Set up real-time system and application monitoring using Netdata in Docker.
+##  Dashboard
 
-Tools Required
+After setup, access the Netdata dashboard at:
+[http://localhost:19999](http://localhost:19999)
 
-Docker
+##  Setup & Usage
 
-Netdata
+### 1. Start Netdata Container
 
-Steps
-1. Start Netdata Container
+sh
 docker run -d --name=netdata \
   -p 19999:19999 \
   --cap-add=sys_ptrace \
   --security-opt apparmor=unconfined \
   netdata/netdata
 
-2. Verify Container
+
+### 2. Verify Container is Running
+
+sh
 docker ps
 
-3. Access the Dashboard
-http://localhost:19999
 
-4. Check Netdata Logs
+### 3. Access the Dashboard
+
+Open your browser and go to:
+[http://localhost:19999]
+
+### 4. List Netdata Logs Inside the Container
+
+sh
 docker exec -it netdata ls /var/log/netdata
 
-5. Stop and Remove Container
+
+### 5. Stop and Remove the Container
+
+sh
 docker stop netdata
-docker rm netda
+docker rm netdata
+
+
+## Deliverables
+
+- Screenshot of Netdata dashboard (showing CPU, RAM, Disk, Network).
+- Screenshot of logs directory (/var/log/netdata).
