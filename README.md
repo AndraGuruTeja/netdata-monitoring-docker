@@ -1,67 +1,32 @@
-# 🖥️ Netdata Monitoring with Docker
 
-This repository demonstrates how to set up real-time system and application monitoring using **Netdata** inside a Docker container.
+Netdata Monitoring Task
+Objective
 
-## 🌐 Dashboard
+Set up real-time system and application monitoring using Netdata in Docker.
 
-After setup, access the Netdata dashboard here:
-[http://localhost:19999](http://localhost:19999)
+Tools Required
 
-## 📁 Repository
+Docker
 
-[github.com/<your-username>/netdata-monitoring-docker](https://github.com/<your-username>/netdata-monitoring-docker)
+Netdata
 
-## 🚀 Setup & Usage
-
-1. **Start Netdata container**
-
+Steps
+1. Start Netdata Container
 docker run -d --name=netdata \
   -p 19999:19999 \
   --cap-add=sys_ptrace \
   --security-opt apparmor=unconfined \
-  netdata/netdata 
+  netdata/netdata
 
-2. **Verify container**
-
+2. Verify Container
 docker ps
 
-3. **Access the dashboard**
-
-Open browser and go to:
+3. Access the Dashboard
 http://localhost:19999
 
-4. **List Netdata logs inside the container**
-
+4. Check Netdata Logs
 docker exec -it netdata ls /var/log/netdata
 
-5. **Stop and remove the containers**
-
+5. Stop and Remove Container
 docker stop netdata
-docker rm netdata
-
-6. **Deliverables**
-
-Screenshot of Netdata dashboard (showing CPU, RAM, Disk, Network).
-
-Screenshot of logs directory (/var/log/netdata).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-echo "# netdata-monitoring-docker" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/AndraGuruTeja/netdata-monitoring-docker.git
-git push -u origin main
+docker rm netda
